@@ -1,0 +1,6 @@
+== Task 3 (creating new images may not be necessary, if you do some steps manually)
+Create a Dockerfile basing on Jenkins image
+Create a second Dockerfile basing on SonarQube image
+Create a docker-compose file starting both services
+Configure Jenkins-SonarQube integration plugin (https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins/)
+Make sure that the integration works
