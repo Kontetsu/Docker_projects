@@ -1,0 +1,4 @@
+== Task 1
+Create a Dockerfile basing on Nginx image
+Find a static website
+Create a new image with the static website embedded inside
