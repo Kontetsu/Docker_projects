@@ -4,3 +4,5 @@ Configure Nginx to serve as a reverse proxy to other services (you'll have to mo
 Add two other services inside a docker-compose file (Jenkins, Nexus, Matomo, Wordpress, Joomla - your choice)
 Configure only the Nginx port to be externally accessible, and other services to only be available via Nginx proxy
 Make sure that everything works
+
+ce76e13cefb54ef9809a8edc406ad027
