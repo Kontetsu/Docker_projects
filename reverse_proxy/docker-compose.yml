@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  proxy:
+    build: nginx
+    container_name: nginx_reverse_proxy
+    volumes: 
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+     - 80:80
+
+  joomla:
+    image: joomla
+    restart: always
+    links:
+      - joomladb:mysql
+    ports:
+      - 8080:80
+    environment:
+      JOOMLA_DB_HOST: joomladb
+      JOOMLA_DB_PASSWORD: password
+
+  joomladb:
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  jenkins:
+    build: jenkins
+    ports:
+      - 9090:8080
+      - 50000:50000
