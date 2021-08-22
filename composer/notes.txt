@@ -1,0 +1,4 @@
+At the 5th point i did not understand the qustion.
+Make sure that the integration works
+In the plugins on jenkins there was a Sonar Qube installed with the requairment that i set in the Dockerfile.
+Other than that i did not know what i could do.
