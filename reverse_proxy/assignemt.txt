@@ -6,3 +6,16 @@ Configure only the Nginx port to be externally accessible, and other services to
 Make sure that everything works
 
 ce76e13cefb54ef9809a8edc406ad027
+
+
+http {
+
+    server {
+        location / {
+            proxy_pass             http://1.2.3.4;
+            proxy_set_header       Host $host;
+            proxy_buffering        on;
+            
+        }
+    }
+}
