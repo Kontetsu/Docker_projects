@@ -1,0 +1,36 @@
+version: '3.7'
+service:
+  shipment:
+    build: Shipment
+    ports:
+      - 8080:8080
+    networks:
+      - app1
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+      placemant:
+        constraints:
+          - "node.role==worker"
+  rescaning:
+    build: Rescaning
+    port:
+      - 8111:8080
+    networks:
+      - app2
+    deploy:
+      replicas: 2
+    update_config:
+      parallelisem: 2
+      delay: 10s
+    restart_policy:
+      condition: on-failure
+      max_attempts: 3
+    placemants:
+      constrains:
+        - "node.role==worker"
